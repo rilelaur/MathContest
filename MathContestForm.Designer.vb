@@ -139,6 +139,7 @@ Partial Class MathContestForm
         '
         'SecondNumberTextBox
         '
+        Me.SecondNumberTextBox.Enabled = False
         Me.SecondNumberTextBox.Location = New System.Drawing.Point(24, 156)
         Me.SecondNumberTextBox.Name = "SecondNumberTextBox"
         Me.SecondNumberTextBox.Size = New System.Drawing.Size(166, 22)
@@ -146,6 +147,7 @@ Partial Class MathContestForm
         '
         'FirstNumbrTextBox
         '
+        Me.FirstNumbrTextBox.Enabled = False
         Me.FirstNumbrTextBox.Location = New System.Drawing.Point(24, 67)
         Me.FirstNumbrTextBox.Name = "FirstNumbrTextBox"
         Me.FirstNumbrTextBox.Size = New System.Drawing.Size(166, 22)
