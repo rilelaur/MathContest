@@ -32,7 +32,7 @@ Partial Class MathContestForm
         Me.CurrentMathProblmeGroupBox = New System.Windows.Forms.GroupBox()
         Me.StudentAnswerTextBox = New System.Windows.Forms.TextBox()
         Me.SecondNumberTextBox = New System.Windows.Forms.TextBox()
-        Me.FirstNumbrTextBox = New System.Windows.Forms.TextBox()
+        Me.FirstNumberTextBox = New System.Windows.Forms.TextBox()
         Me.StudentAnswerLabel = New System.Windows.Forms.Label()
         Me.SecondNumberLabel = New System.Windows.Forms.Label()
         Me.FirstNumberLabel = New System.Windows.Forms.Label()
@@ -119,7 +119,7 @@ Partial Class MathContestForm
         '
         Me.CurrentMathProblmeGroupBox.Controls.Add(Me.StudentAnswerTextBox)
         Me.CurrentMathProblmeGroupBox.Controls.Add(Me.SecondNumberTextBox)
-        Me.CurrentMathProblmeGroupBox.Controls.Add(Me.FirstNumbrTextBox)
+        Me.CurrentMathProblmeGroupBox.Controls.Add(Me.FirstNumberTextBox)
         Me.CurrentMathProblmeGroupBox.Controls.Add(Me.StudentAnswerLabel)
         Me.CurrentMathProblmeGroupBox.Controls.Add(Me.SecondNumberLabel)
         Me.CurrentMathProblmeGroupBox.Controls.Add(Me.FirstNumberLabel)
@@ -145,13 +145,13 @@ Partial Class MathContestForm
         Me.SecondNumberTextBox.Size = New System.Drawing.Size(166, 22)
         Me.SecondNumberTextBox.TabIndex = 1
         '
-        'FirstNumbrTextBox
+        'FirstNumberTextBox
         '
-        Me.FirstNumbrTextBox.Enabled = False
-        Me.FirstNumbrTextBox.Location = New System.Drawing.Point(24, 67)
-        Me.FirstNumbrTextBox.Name = "FirstNumbrTextBox"
-        Me.FirstNumbrTextBox.Size = New System.Drawing.Size(166, 22)
-        Me.FirstNumbrTextBox.TabIndex = 0
+        Me.FirstNumberTextBox.Enabled = False
+        Me.FirstNumberTextBox.Location = New System.Drawing.Point(24, 67)
+        Me.FirstNumberTextBox.Name = "FirstNumberTextBox"
+        Me.FirstNumberTextBox.Size = New System.Drawing.Size(166, 22)
+        Me.FirstNumberTextBox.TabIndex = 0
         '
         'StudentAnswerLabel
         '
@@ -241,7 +241,7 @@ Partial Class MathContestForm
         Me.SubmitButton.Name = "SubmitButton"
         Me.SubmitButton.Size = New System.Drawing.Size(251, 58)
         Me.SubmitButton.TabIndex = 0
-        Me.SubmitButton.Text = "Submit"
+        Me.SubmitButton.Text = "&Submit"
         Me.SubmitButton.UseVisualStyleBackColor = True
         '
         'ClearButton
@@ -250,7 +250,7 @@ Partial Class MathContestForm
         Me.ClearButton.Name = "ClearButton"
         Me.ClearButton.Size = New System.Drawing.Size(251, 58)
         Me.ClearButton.TabIndex = 1
-        Me.ClearButton.Text = "Clear"
+        Me.ClearButton.Text = "&Clear"
         Me.ClearButton.UseVisualStyleBackColor = True
         '
         'ExitButton
@@ -268,7 +268,7 @@ Partial Class MathContestForm
         Me.SummeryButton.Name = "SummeryButton"
         Me.SummeryButton.Size = New System.Drawing.Size(251, 58)
         Me.SummeryButton.TabIndex = 2
-        Me.SummeryButton.Text = "Summery"
+        Me.SummeryButton.Text = "S&ummery"
         Me.SummeryButton.UseVisualStyleBackColor = True
         '
         'ButtonsGroupBox
@@ -315,7 +315,7 @@ Partial Class MathContestForm
     Friend WithEvents CurrentMathProblmeGroupBox As GroupBox
     Friend WithEvents StudentAnswerTextBox As TextBox
     Friend WithEvents SecondNumberTextBox As TextBox
-    Friend WithEvents FirstNumbrTextBox As TextBox
+    Friend WithEvents FirstNumberTextBox As TextBox
     Friend WithEvents StudentAnswerLabel As Label
     Friend WithEvents SecondNumberLabel As Label
     Friend WithEvents FirstNumberLabel As Label
