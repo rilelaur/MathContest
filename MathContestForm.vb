@@ -8,6 +8,8 @@ Option Explicit On
 Option Strict On
 
 Public Class MathContestForm
+    Shared btnclicked As Boolean = False
+
     'When the program loads it populates the first and second number textboxes with a number
     Private Sub MathContestForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         PopulateFirstNumber(100)
@@ -24,9 +26,9 @@ Public Class MathContestForm
         StudentNameTextBox.Clear()
         StudentAgeTextBox.Clear()
         StudentGradeTextBox.Clear()
-        FirstNumberTextBox.Clear()
-        SecondNumberTextBox.Clear()
         StudentAnswerTextBox.Clear()
+        btnclicked = True
+        RunningTotal(0)
     End Sub
 
     Private Sub SubmitButton_Click(sender As Object, e As EventArgs) Handles SubmitButton.Click
@@ -63,11 +65,16 @@ Public Class MathContestForm
             MessageBox.Show("Message to user: Please input your answer.")
         ElseIf CInt(StudentAnswerTextBox.Text) = correctAnswer Then
             MessageBox.Show("Congratulations! You submited the correct answer.")
-            RunningTotal(1, 0)
+            CorrectAnswerSubmitted(True)
         Else
             MessageBox.Show($"The correct answer is {correctAnswer}")
-            RunningTotal(0, 1)
+            CorrectAnswerSubmitted(False)
         End If
+
+        PopulateFirstNumber(100)
+        PopulateSecondNumber(100)
+
+        StudentAnswerTextBox.Clear()
     End Sub
 
     'generates a random number
@@ -92,17 +99,30 @@ Public Class MathContestForm
         Return SecondNumberTextBox.Text
     End Function
 
-    'keeps track of correct and incorrect answers
-    Function RunningTotal(correct As Integer, incorrect As Integer) As Integer
-        If correct = 1 Then
-            correct += 1
-        Else
-            incorrect += 1
+    'tests if the correct answer was submitted
+    Sub CorrectAnswerSubmitted(correct As Boolean)
+        If correct = True Then
+            RunningTotal(1)
         End If
-        Return correct And incorrect
+    End Sub
+
+    'keeps track of correct answers
+    Function RunningTotal(ByRef countCorrect As Integer) As Integer
+        Static _countCorrect As Integer
+
+        _countCorrect += 1
+
+        countCorrect = _countCorrect
+
+        If btnclicked = True Then
+            _countCorrect = 0
+        End If
+
+        Return countCorrect
     End Function
 
+    'Shows how many questions the student answered correctly
     Private Sub SummeryButton_Click(sender As Object, e As EventArgs) Handles SummeryButton.Click
-        MessageBox.Show($"Correct {RunningTotal(1, 0)} Incorrect {RunningTotal(0, 1)}")
+        MessageBox.Show($"You got {RunningTotal(0) - 1} questions correct.")
     End Sub
 End Class
